@@ -29,6 +29,8 @@ import Navbar from "@/components/Navbar";
 import WordsList from "@/components/WordsList";
 import AddWord from "@/components/AddWord";
 import { mapGetters, mapActions } from "vuex";
+import router from "@/router"
+
 export default {
     components: {
         Navbar,
@@ -44,6 +46,11 @@ export default {
         "wordsCountLearned",
         "authorizedUser",
     ]),
+    mounted: function() {
+        if (!this.authorizedUser.login) {
+            router.push("/login")
+        }
+    }
 };
 </script>
 

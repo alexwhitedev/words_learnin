@@ -35,7 +35,7 @@ export default {
                 login: "admin",
                 password: "admin",
                 //
-                authorized: true,
+                authorized: false,
             },
             {
                 id: 1,
