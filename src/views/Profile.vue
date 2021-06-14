@@ -1,22 +1,16 @@
 <template>
     <div>
         <Navbar />
-        <div class="container mt-3">
+        <div class="container mt-3" id="profile">
             <h3>Profile of</h3>
-            <h1>
-                {{authorizedUser.login}}
+            <h1 id="profile__login">
+                {{ authorizedUser.login }}
             </h1>
-            <div class='buttons'>
-                <button v-if="!authorizedUser.login">
-                    <router-link to="/login">Login</router-link>
-                </button>
-                <button v-if="!authorizedUser.login">
-                    <router-link to="/register">Register</router-link>
+            <div class="buttons" id="profile__buttons">
+                <button id="profile__buttons-dictionary" v-if="authorizedUser.login">
+                    <router-link to="/words">Go to Dictionary</router-link>
                 </button>
             </div>
-            <button v-if="authorizedUser.login">
-                <router-link to="/words">Go to Dictionary</router-link>
-            </button>
         </div>
     </div>
 </template>
@@ -24,7 +18,7 @@
 <script>
 import Navbar from "@/components/Navbar";
 import { mapGetters, mapActions } from "vuex";
-import router from "@/router"
+import router from "@/router";
 
 export default {
     components: {
@@ -33,9 +27,9 @@ export default {
     computed: mapGetters(["authorizedUser"]),
     mounted: function() {
         if (!this.authorizedUser.login) {
-            router.push("/login")
+            router.push("/login");
         }
-    }
+    },
 };
 </script>
 
@@ -51,6 +45,6 @@ li {
 }
 
 .buttons > button {
-    margin: 5px
+    margin: 5px;
 }
 </style>

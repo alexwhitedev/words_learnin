@@ -1,8 +1,8 @@
 <template>
     <div>
         <Navbar />
-        <div class="container mt-3">
-            <h2>Home Page</h2>
+        <div class="container mt-3" id='home'>
+            <h2 class="home__title">Home Page</h2>
             <p>
                 Application created for peoples who want to keep a dictionary.
             </p>
@@ -11,17 +11,17 @@
                 <li><h5>add English words and translations</h5></li>
                 <li><h5>mark words as known</h5></li>
             </ul>
-            <div class='buttons'>
-                <button v-if="!authorizedUser.login">
+            <div class="buttons" id="home__buttons">
+                <button id="home__buttons-login" v-if="!authorizedUser.login">
                     <router-link to="/login">Login</router-link>
                 </button>
-                <button v-if="!authorizedUser.login">
+                <button id="home__buttons-register" v-if="!authorizedUser.login">
                     <router-link to="/register">Register</router-link>
                 </button>
+                <button id="home__buttons-dictionary" v-if="authorizedUser.login">
+                    <router-link to="/words">Go to Dictionary</router-link>
+                </button>
             </div>
-            <button v-if="authorizedUser.login">
-                <router-link to="/words">Go to Dictionary</router-link>
-            </button>
         </div>
     </div>
 </template>
@@ -50,6 +50,6 @@ li {
 }
 
 .buttons > button {
-    margin: 5px
+    margin: 5px;
 }
 </style>

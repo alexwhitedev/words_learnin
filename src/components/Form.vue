@@ -1,19 +1,19 @@
 <template>
-    <div class="container mt-3">
-        <form @submit.prevent="onSubmit">
-            <input
+    <div class="container mt-3" id="form">
+        <form @submit.prevent="onSubmit" id='form__form'>
+            <input id="form__login"
                 type="text"
                 name="login"
                 placeholder="login"
                 v-model="login"
             />
-            <input
+            <input id="form__password"
                 type="text"
                 name="password"
                 placeholder="password"
                 v-model="password"
             />
-            <button type="submit">{{btn}}</button>
+            <button id="form__button" type="submit">{{btn}}</button>
         </form>
     </div>
 </template>

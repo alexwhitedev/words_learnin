@@ -1,13 +1,13 @@
 <template>
     <div>
         <Navbar />
-        <div class="container mt-3">
-            <div class="info_dash d-flex flex-row justify-content-between">
-                <div class="words_stat d-flex flex-row">
+        <div class="container mt-3" id='words'>
+            <div id="info__dash" class="info_dash d-flex flex-row justify-content-between">
+                <div id="info__dash-total" class="words_stat d-flex flex-row">
                     <h3 class="words_stat-item m-3">Words total:</h3>
                     <h3 class="words_stat-item m-3">{{ wordsCount }}</h3>
                 </div>
-                <div class="words_stat d-flex flex-row">
+                <div id="info__dash-learned" class="words_stat d-flex flex-row">
                     <h3 class="words_stat-item m-3">Words learned:</h3>
                     <h3 class="words_stat-item m-3">{{ wordsCountLearned }}</h3>
                 </div>

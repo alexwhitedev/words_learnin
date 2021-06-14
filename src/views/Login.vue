@@ -1,14 +1,14 @@
 <template>
     <div>
         <Navbar />
-        <div class="container mt-3">
+        <div class="container mt-3" id='login'>
             <h3>Sign in</h3>
             <Form
                 v-if="!authorizedUser.login"
                 @form-data="loginUser"
                 v-bind:btn="'Login'"
             />
-            <router-link v-if="authorizedUser.login" to="/Words"
+            <router-link id='login-button' v-if="authorizedUser.login" to="/Words"
                 >Learn Words</router-link
             >
         </div>

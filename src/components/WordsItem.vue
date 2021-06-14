@@ -1,12 +1,12 @@
 <template>
-    <li class="p-2 mb-2" v-bind:class="{ done: word.completed }">
-        <div v-on:click="word.completed = !word.completed">
+    <li class="wordList__item p-2 mb-2" v-bind:class="{ done: word.completed }">
+        <div class="wordList__item-title" v-on:click="word.completed = !word.completed">
             {{ word.title | uppercase }}
         </div>
         <div>
-            <button v-on:click="translateWord">translate</button>
+            <button class="wordList__item-translate" v-on:click="translateWord">translate</button>
             <button
-                class="button_remove"
+                class="button_remove wordList__item-remove"
                 v-on:click="$emit('removeWord', word.id)"
             >
                 &times;

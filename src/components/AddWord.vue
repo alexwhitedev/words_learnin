@@ -1,21 +1,19 @@
 <template>
-    <div class="container">
-        <form @submit.prevent="onSubmit">
-            <input
+    <div class="container" id="addword">
+        <form @submit.prevent="onSubmit" id='addword__form'>
+            <input id='addword__eng'
                 type="text"
                 name="eng"
-                id=""
                 placeholder="eng"
                 v-model="eng"
             />
-            <input
+            <input id='addword__ukr'
                 type="text"
                 name="ukr"
-                id=""
                 placeholder="ukr"
                 v-model="ukr"
             />
-            <button type="submit">Add</button>
+            <button id='addword__button' type="submit">Add</button>
         </form>
     </div>
 </template>

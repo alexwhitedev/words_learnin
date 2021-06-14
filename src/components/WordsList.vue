@@ -1,5 +1,5 @@
 <template>
-    <div class="word">
+    <div class="word" id='wordsList'>
         <ul class='mt-2'>
             <WordsItem 
             v-for="word of words" 
